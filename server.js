@@ -10,8 +10,6 @@ const port = 3000;
 const { renderToString } = require('react-dom/server');
 const App = require('./public/Nearby/bundle.js').default;
 
-const ReactDOM = require('react-dom')
-
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -45,7 +43,8 @@ app.get('/restaurants/:id', (req, res) => {
       <link rel="stylesheet" href="http://13.57.205.164:3004/restaurants/styles.css">
     </head>
     <body>
-      <script>var ReactDOM = ${ReactDOM}</script>
+      <script src="/lib/react-dom.production.min.js><script>"
+      <script src="/lib/react.production.min.js><script>"
       <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
       <div id="app"></div>
