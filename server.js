@@ -16,6 +16,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(bodyParser.json());
 
+app.get('/loaderio-e5decec6f900b7fd867ad6eaaa03b82d/', (req, res) => {
+  res.send('loaderio-e5decec6f900b7fd867ad6eaaa03b82d');
+})
 
 app.use('/restaurants', express.static(path.join(__dirname, './public')));
 
