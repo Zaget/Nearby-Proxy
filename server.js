@@ -41,6 +41,7 @@ app.get('/restaurants/:id', (req, res) => {
       <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css" rel="stylesheet">
       <title>Zaget</title>
       <link rel="stylesheet" href="http://13.57.205.164:3004/restaurants/styles.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.3.2/cjs/react-dom-server.browser.production.min.js"></script>
     </head>
     <body>
       <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
