@@ -10,6 +10,8 @@ const port = 3000;
 const { renderToString } = require('react-dom/server');
 const App = require('./public/Nearby/bundle.js').default;
 
+const ReactDOM = require('react-dom')
+
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -41,7 +43,6 @@ app.get('/restaurants/:id', (req, res) => {
       <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css" rel="stylesheet">
       <title>Zaget</title>
       <link rel="stylesheet" href="http://13.57.205.164:3004/restaurants/styles.css">
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.1/react-dom.min.js"></script>
     </head>
     <body>
       <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -56,7 +57,7 @@ app.get('/restaurants/:id', (req, res) => {
       </div>
       <div id="nearby-app">${markup}</div>
       <script src="http://13.57.205.164:3004/restaurants/bundle.js"></script>
-      <script>ReactDOM.hydrate(React.createElement(${App}), document.getElementById('nearby-app'));</script>
+      <script>${ReactDOM}.hydrate(React.createElement(${App}), document.getElementById('nearby-app'));</script>
     </body>
   </html>
 
