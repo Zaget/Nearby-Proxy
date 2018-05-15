@@ -45,6 +45,7 @@ app.get('/restaurants/:id', (req, res) => {
       <link rel="stylesheet" href="http://13.57.205.164:3004/restaurants/styles.css">
     </head>
     <body>
+      <script>var ReactDOM = ${ReactDOM}</script>
       <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
       <div id="app"></div>
@@ -57,7 +58,7 @@ app.get('/restaurants/:id', (req, res) => {
       </div>
       <div id="nearby-app">${markup}</div>
       <script src="http://13.57.205.164:3004/restaurants/bundle.js"></script>
-      <script>${ReactDOM}.hydrate(React.createElement(${App}), document.getElementById('nearby-app'));</script>
+      <script>ReactDOM.hydrate(React.createElement(${App}), document.getElementById('nearby-app'));</script>
     </body>
   </html>
 
