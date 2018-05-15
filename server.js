@@ -25,6 +25,7 @@ app.use('/restaurants', express.static(path.join(__dirname, './public')));
 app.get('/restaurants/:id', (req, res) => {
   axios.get(`http://13.57.205.164:3004/api/restaurants/${req.params.id}/nearby`)
   .then(data => {
+    let data = {currentRestaurant:data[0], nearbyRestaurants:data[1], id}
     const markup = renderToString(React.createElement(App, data));
     res.send(`
     <!DOCTYPE html>
@@ -55,8 +56,7 @@ app.get('/restaurants/:id', (req, res) => {
       <div id="nearby-app">${markup}</div>
       <script src="http://13.57.205.164:3004/restaurants/bundle.js"></script>
     </body>
-  </html>
-
+    </html>
     `);
   })
 });
