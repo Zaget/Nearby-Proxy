@@ -58,7 +58,7 @@ app.get('/restaurants/:id', (req, res) => {
       </div>
       <div id="nearby-app">${markup}</div>
       <script src="http://13.57.205.164:3004/restaurants/bundle.js"></script>
-      <script>${App}</script>
+      <script>ReactDOM.hydrate(React.createElement(${App}), document.getElementById('nearby-app'));</script>
     </body>
   </html>
 
