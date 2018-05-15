@@ -1,5 +1,5 @@
 const express = require('express');
-require('newrelic');
+// require('newrelic');
 const path = require('path');
 
 const app = express();
