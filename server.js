@@ -25,8 +25,7 @@ app.use('/restaurants', express.static(path.join(__dirname, './public')));
 app.get('/restaurants/:id', (req, res) => {
   axios.get(`http://13.57.205.164:3004/api/restaurants/${req.params.id}/nearby`)
   .then(data => {
-
-    const markup = renderToString(React.createElement(App));
+    const markup = renderToString(React.createElement(App, data));
     res.send(`
     <!DOCTYPE html>
     <html lang="en">
@@ -44,9 +43,6 @@ app.get('/restaurants/:id', (req, res) => {
     </head>
     <body>
       <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script src="/lib/react.production.min.js"></script>
-      <script src="/lib/react-dom.production.min.js"></script>
-      <script>console.log(ReactDOM)</script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
       <div id="app"></div>
       <div class="proxy-container">
@@ -58,7 +54,6 @@ app.get('/restaurants/:id', (req, res) => {
       </div>
       <div id="nearby-app">${markup}</div>
       <script src="http://13.57.205.164:3004/restaurants/bundle.js"></script>
-      <script>ReactDOM.hydrate(React.createElement(${App}), document.getElementById('nearby-app'));</script>
     </body>
   </html>
 
