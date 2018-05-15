@@ -41,7 +41,7 @@
     "new": "^0.1.1",
     "newrelic": "^4.1.0",
     "react": "^16.3.2",
-    "react-dom": "^16.2.0",
+    "react-dom": "^16.3.2",
     "react-icons": "^2.2.7",
     "react-image-lightbox": "^4.6.0",
     "react-lines-ellipsis": "^0.10.2",
