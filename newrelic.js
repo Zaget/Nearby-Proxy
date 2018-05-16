@@ -1,4 +1,4 @@
-const API_KEY = require(NewRelicKey.js);
+const API_KEY = require(newRelicKey.js);
 /**
  * New Relic agent configuration.
  *
