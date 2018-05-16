@@ -11,7 +11,7 @@ module.exports = (nearby) => (`
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css" rel="stylesheet">
         <title>Zaget</title>
-        <link rel="stylesheet" href="http://13.57.205.164:3004/restaurants/styles.css">
+        <link rel="stylesheet" href="http://52.53.193.160:3004/restaurants/styles.css">
       </head>
       <body>
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -25,7 +25,7 @@ module.exports = (nearby) => (`
           <div id="apateezSidebar"></div>
         </div>
         <div id="nearby-app">${nearby}</div>
-        <script src="http://13.57.205.164:3004/restaurants/bundle.js"></script>
+        <script src="http://52.53.193.160:3004/restaurants/bundle.js"></script>
       </body>
     </html>
 `)
