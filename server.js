@@ -4,7 +4,7 @@ const path = require('path');
 const React = require('react');
 const App = require('./public/Nearby/bundle.js').default;
 const { renderToString } = require('react-dom/server');
-const template = require('template.js');
+const template = require('./template.js');
 
 const fillerData = {name:'', google_rating: 0, zagat_rating: 0, photos:[], neighborhood:'', price_level:1, types: ''};
 
