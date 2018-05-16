@@ -1,4 +1,4 @@
-newrelic.js
 node_modules
 package-lock.js
 newrelic_agent.log
+NewRelicKey.js
