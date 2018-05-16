@@ -22,7 +22,7 @@ app.get('/loaderio-e5decec6f900b7fd867ad6eaaa03b82d/', (req, res) => {
 app.use('/restaurants', express.static(path.join(__dirname, './public')));
 
 app.get('/restaurants/:id', (req, res) => {
-  const fillerData = {name:'', google_rating: 0, zagat_rating: 0, photos:[105], neighborhood:'', price_level:1, types: ''}
+  const fillerData = {name:'', google_rating: 0, zagat_rating: 0, photos:[], neighborhood:'', price_level:1, types: ''}
   const info = {currentRestaurant:fillerData, nearbyRestaurants:[fillerData, fillerData, fillerData, fillerData, fillerData, fillerData]}
   const markup = renderToString(React.createElement(App, info));
   res.send(`
