@@ -22,39 +22,39 @@ app.get('/loaderio-e5decec6f900b7fd867ad6eaaa03b82d/', (req, res) => {
 app.use('/restaurants', express.static(path.join(__dirname, './public')));
 
 app.get('/restaurants/:id', (req, res) => {
-  
-const markup = renderToString(React.createElement(App));
+  const fillerData = {name:'', google_rating: 0, zagat_rating: 0, photos:[105], neighborhood:'', price_level:1, types: ''}
+  const info = {currentRestaurant:fillerData, nearbyRestaurants:[fillerData, fillerData, fillerData, fillerData, fillerData, fillerData]}
+  const markup = renderToString(React.createElement(App, info));
   res.send(`
     <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="/style.css">
-    <link rel="icon" href="https://s3-us-west-1.amazonaws.com/apateezassets/apateez-logo-small-red.jpeg" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css" rel="stylesheet">
-    <title>Zaget</title>
-    <link rel="stylesheet" href="http://13.57.205.164:3004/restaurants/styles.css">
-  </head>
-  <body>
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
-    <div id="app"></div>
-    <div class="proxy-container">
-      <div>
-        <div id="description"></div>
-        <div id="reviews"></div>
-      </div>
-      <div id="apateezSidebar"></div>
-    </div>
-    <div id="nearby-app">${markup}</div>
-    <script src="http://13.57.205.164:3004/restaurants/bundle.js"></script>
-  </body>
-</html>
-
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="/style.css">
+        <link rel="icon" href="https://s3-us-west-1.amazonaws.com/apateezassets/apateez-logo-small-red.jpeg" type="image/x-icon">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css" rel="stylesheet">
+        <title>Zaget</title>
+        <link rel="stylesheet" href="http://13.57.205.164:3004/restaurants/styles.css">
+      </head>
+      <body>
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+        <div id="app"></div>
+        <div class="proxy-container">
+          <div>
+            <div id="description"></div>
+            <div id="reviews"></div>
+          </div>
+          <div id="apateezSidebar"></div>
+        </div>
+        <div id="nearby-app">${markup}</div>
+        <script src="http://13.57.205.164:3004/restaurants/bundle.js"></script>
+      </body>
+    </html>
   `);
 });
 
