@@ -20,8 +20,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(bodyParser.json());
 
-app.get('/loaderio-cf90100d885550183d79247b208a73f2/', (req, res) => {
-  res.send('loaderio-cf90100d885550183d79247b208a73f2');
+app.get('/loaderio-c2b8fbbdc1dc9dc0676e809a3fa5b4b3', (req, res) => {
+  res.send('loaderio-c2b8fbbdc1dc9dc0676e809a3fa5b4b3');
 })
 
 app.use('/restaurants', express.static(path.join(__dirname, './public')));
