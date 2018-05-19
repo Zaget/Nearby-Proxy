@@ -2,7 +2,7 @@ require('newrelic');
 const express = require('express');
 const path = require('path');
 const React = require('react');
-const App = require('./public/Nearby/bundle.js').default;
+// const App = require('./public/Nearby/bundle.js').default;
 const { renderToString } = require('react-dom/server');
 const template = require('./template.js');
 
